@@ -272,8 +272,12 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
     nav {
-        flex-direction: column;
-        gap: 15px;
+        flex-direction: column; /* Logo di atas, menu di bawahnya atau tetap sejajar */
+        align-items: center;
+    }
+.desktop-links a {
+        font-size: 14px; /* Perkecil sedikit ukuran font menu agar muat */
+        margin: 0 5px;   /* Atur jarak antar menu */
     }
     .hero-content h1 {
         font-size: 2rem;
