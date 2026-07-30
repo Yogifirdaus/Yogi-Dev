@@ -5,6 +5,7 @@
     --kuning: #ffb703;
     --hitam-teks: #2b2d42;
     --abu-bg: #f8f9fa;
+    color-scheme: light dark;
 }
 
 * {
