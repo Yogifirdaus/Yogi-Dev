@@ -269,25 +269,6 @@ footer {
     border-top: 5px solid var(--kuning);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column; /* Logo di atas, menu di bawahnya atau tetap sejajar */
-        align-items: center;
-    }
-.desktop-links a {
-        font-size: 14px; /* Perkecil sedikit ukuran font menu agar muat */
-        margin: 0 5px;   /* Atur jarak antar menu */
-    }
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-    section {
-        padding: 50px 20px;
-    }
-}
-
-
 /* =========================================
    TAMBAHAN CSS UNTUK FITUR TROLI (CART)
 ========================================= */
