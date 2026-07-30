@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varian Paket Harga - Yogi Dev</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigasi -->
+    <nav>
+        <div class="logo">
+            <img src="logobaru.png" alt="Logo Yogi Dev" class="logo-img">
+            Yogi <span>Dev</span>
+        </div>
+        
+        <div class="nav-links">
+            <div class="desktop-links">
+                <a href="index.html">Home</a>
+                <a href="paket.html">Paket Harga</a>
+                <a href="tentang.html">Tentang</a>
+                <a href="pembayaran.html">Cara Pembayaran</a>
+            </div>
+            
+            <!-- Ikon Troli -->
+            <a href="javascript:void(0)" class="cart-icon" onclick="toggleCart()">
+                🛒 Troli <span id="cart-count" class="badge">0</span>
+            </a>
+
+            <!-- Menu Titik Tiga -->
+            <div class="dropdown-container">
+                <button class="dot-btn" onclick="toggleDotMenu()">&#8942;</button>
+                <div id="dot-dropdown" class="dot-menu-content">
+                    <div class="find-box">
+                        <input type="text" id="findInput" placeholder="Cari kata...">
+                        <button onclick="findText()" class="btn-find">Cari</button>
+                    </div>
+                    <hr>
+                    <a href="index.html">Home</a>
+                    <a href="paket.html">Paket Harga</a>
+                    <a href="index.html#pembayaran">Cara Pembayaran</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Paket Harga -->
+    <section id="paket">
+        <h2>Varian Paket Harga Reguler</h2>
+        <div class="pricing-container">
+            
+            <div class="card">
+                <h3>Paket Starter</h3>
+                <div class="price">Rp 750.000</div>
+                <ul>
+                    <li>1 Halaman Landing Page</li>
+                    <li>Desain Responsif</li>
+                    <li>Tombol Direct WhatsApp</li>
+                    <li>Revisi 2 Kali</li>
+                </ul>
+                <button onclick="addToCart('Paket Starter', 750000)" class="btn-cart">Masukkan ke Troli</button>
+            </div>
+
+            <div class="card" style="border-color: var(--merah); transform: scale(1.05);">
+                <h3>Paket Bisnis</h3>
+                <div class="price">Rp 1.500.000</div>
+                <ul>
+                    <li>Hingga 5 Halaman Web</li>
+                    <li>Optimasi Kecepatan & SEO</li>
+                    <li>Desain UI/UX Menarik</li>
+                    <li>Integrasi E-Wallet / Form</li>
+                </ul>
+                <button onclick="addToCart('Paket Bisnis', 1500000)" class="btn-cart">Masukkan ke Troli</button>
+            </div>
+
+            <div class="card">
+                <h3>Paket Custom</h3>
+                <div class="price">Mulai Rp 2.500.000</div>
+                <ul>
+                    <li>Fitur Sesuai Kebutuhan</li>
+                    <li>Sistem Database / Toko Online</li>
+                    <li>Konsultasi Konsep Bebas</li>
+                    <li>Maintenance 1 Bulan</li>
+                </ul>
+                <button onclick="addToCart('Paket Custom', 2500000)" class="btn-cart">Masukkan ke Troli</button>
+            </div>
+
+        </div>
+    </section>
+
+ <section id="paket">
+        <h2>Varian Paket Harga Ekonomis</h2>
+        <div class="pricing-container">
+            
+            <div class="card">
+                <h3>Paket Starter</h3>
+                <div class="price">Rp 750.000</div>
+                <ul>
+                    <li>1 Halaman Landing Page</li>
+                    <li>Desain Responsif</li>
+                    <li>Tombol Direct WhatsApp</li>
+                    <li>Revisi 2 Kali</li>
+                </ul>
+                <button onclick="addToCart('Paket Starter', 750000)" class="btn-cart">Masukkan ke Troli</button>
+            </div>
+
+            <div class="card" style="border-color: var(--merah); transform: scale(1.05);">
+                <h3>Paket Bisnis</h3>
+                <div class="price">Rp 1.500.000</div>
+                <ul>
+                    <li>Hingga 5 Halaman Web</li>
+                    <li>Optimasi Kecepatan & SEO</li>
+                    <li>Desain UI/UX Menarik</li>
+                    <li>Integrasi E-Wallet / Form</li>
+                </ul>
+                <button onclick="addToCart('Paket Bisnis', 1500000)" class="btn-cart">Masukkan ke Troli</button>
+            </div>
+
+            <div class="card">
+                <h3>Paket Custom</h3>
+                <div class="price">Mulai Rp 2.500.000</div>
+                <ul>
+                    <li>Fitur Sesuai Kebutuhan</li>
+                    <li>Sistem Database / Toko Online</li>
+                    <li>Konsultasi Konsep Bebas</li>
+                    <li>Maintenance 1 Bulan</li>
+                </ul>
+                <button onclick="addToCart('Paket Custom', 2500000)" class="btn-cart">Masukkan ke Troli</button>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- Modal / Popup Troli -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="toggleCart()">&times;</span>
+            <h2 style="color: var(--merah); margin-bottom: 20px;">Troli Pesanan Anda</h2>
+            
+            <div id="cart-items-container">
+                <p>Troli Anda masih kosong.</p>
+            </div>
+            
+            <hr style="margin: 20px 0; border: 1px solid #eee;">
+            
+            <div class="cart-total">
+                <h3>Total: Rp <span id="total-price">0</span></h3>
+            </div>
+            
+            <button onclick="checkoutWA()" class="btn-wa" style="margin-top: 20px;">Checkout via WhatsApp</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Yogi Dev - Solusi Website Cerdas & Profesional.</p>
+    </footer>
+
+    <!-- Script Troli & Navigasi -->
+    <script>
+        function toggleDotMenu() {
+            const menu = document.getElementById("dot-dropdown");
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+
+        function findText() {
+            const input = document.getElementById("findInput").value;
+            if (input.trim() !== "") {
+                const found = window.find(input);
+                if (!found) alert("Kata tidak ditemukan.");
+            }
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dot-btn') && !event.target.closest('.dot-menu-content')) {
+                const dropdowns = document.getElementsByClassName("dot-menu-content");
+                for (let i = 0; i < dropdowns.length; i++) {
+                    dropdowns[i].style.display = 'none';
+                }
+            }
+        }
+
+        // --- SHOPPING CART ---
+        let cart = [];
+
+        function formatRupiah(angka) {
+            return new Intl.NumberFormat('id-ID').format(angka);
+        }
+
+        function addToCart(namaPaket, harga) {
+            cart.push({ nama: namaPaket, harga: harga });
+            updateCartUI();
+            alert(namaPaket + ' berhasil dimasukkan ke troli!');
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            document.getElementById('cart-count').innerText = cart.length;
+            const cartContainer = document.getElementById('cart-items-container');
+            const totalElement = document.getElementById('total-price');
+
+            if (cart.length === 0) {
+                cartContainer.innerHTML = '<p>Troli Anda masih kosong.</p>';
+                totalElement.innerText = '0';
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+            cart.forEach((item, index) => {
+                html += `
+                <div class="cart-item">
+                    <span>${item.nama}</span>
+                    <span>Rp ${formatRupiah(item.harga)} <button class="btn-remove" onclick="removeFromCart(${index})">X</button></span>
+                </div>`;
+                total += item.harga;
+            });
+
+            cartContainer.innerHTML = html;
+            totalElement.innerText = formatRupiah(total);
+        }
+
+        function toggleCart() {
+            const modal = document.getElementById('cart-modal');
+            modal.style.display = (modal.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+        function checkoutWA() {
+            if (cart.length === 0) {
+                alert('Troli Anda kosong! Silakan pilih paket terlebih dahulu.');
+                return;
+            }
+            const noWA = "6281234567890"; 
+            let textWA = "Halo *Yogi Dev*, saya ingin memesan jasa pembuatan website berikut:\n\n";
+            let total = 0;
+            cart.forEach((item, index) => {
+                textWA += `${index + 1}. ${item.nama} - Rp ${formatRupiah(item.harga)}\n`;
+                total += item.harga;
+            });
+            textWA += `\n*Total Tagihan: Rp ${formatRupiah(total)}*\n\nMohon informasinya!`;
+            const urlWA = `https://wa.me/${noWA}?text=${encodeURIComponent(textWA)}`;
+            window.open(urlWA, '_blank');
+        }
+    </script>
+</body>
+</html>

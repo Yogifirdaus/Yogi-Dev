@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - Yogi Dev</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigasi -->
+    <nav>
+        <div class="logo">
+            <img src="logobaru.png" alt="Logo Yogi Dev" class="logo-img">
+            Yogi <span>Dev</span>
+        </div>
+        
+        <div class="nav-links">
+            <div class="desktop-links">
+                <a href="index.html">Home</a>
+                <a href="paket.html">Paket Harga</a>
+                <a href="pembayaran.html">Cara Pembayaran</a>
+                <a href="tentang.html" style="color: var(--merah);">Tentang</a>
+            </div>
+            
+            <!-- Menu Titik Tiga -->
+            <div class="dropdown-container">
+                <button class="dot-btn" onclick="toggleDotMenu()">&#8942;</button>
+                <div id="dot-dropdown" class="dot-menu-content">
+                    <div class="find-box">
+                        <input type="text" id="findInput" placeholder="Cari kata...">
+                        <button onclick="findText()" class="btn-find">Cari</button>
+                    </div>
+                    <hr>
+                    <a href="index.html">Home</a>
+                    <a href="paket.html">Paket Harga</a>
+                    <a href="pembayaran.html">Cara Pembayaran</a>
+                    <a href="tentang.html">Tentang</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Tentang Kami -->
+    <section class="about-section" style="padding: 60px 20px; max-width: 900px; margin: 0 auto; text-align: left;">
+        <h2 style="text-align: center; margin-bottom: 30px;">Tentang Yogi Dev</h2>
+        
+        <div class="about-card" style="background: var(--putih); padding: 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-top: 5px solid var(--merah);">
+            <p style="font-size: 1.1rem; margin-bottom: 20px; line-height: 1.8;">
+                Selamat datang di Yogi Dev, solusi digital terdepan bagi Anda yang ingin membawa bisnis melesat cepat ke dunia online. Kami adalah layanan profesional yang berfokus pada jasa pembuatan website berkualitas tinggi, responsif, cepat, dan dirancang khusus untuk mendongkrak penjualan serta kredibilitas brand Anda.
+            </p>
+            
+            <h3 style="color: var(--merah); margin-top: 30px; margin-bottom: 15px; font-size: 1.4rem;">Mengapa Memilih Yogi Dev?</h3>
+            <ul style="list-style: none; padding-left: 0;">
+                <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
+                    <span style="position: absolute; left: 0; color: var(--kuning); font-weight: bold;">✓</span>
+                    <strong>Ide & Solusi Bisnis Kreatif:</strong> Kami tidak hanya merancang barisan kode, tetapi juga menerjemahkan ide-ide segar Anda menjadi sebuah platform digital yang interaktif dan tepat sasaran.
+                </li>
+                <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
+                    <span style="position: absolute; left: 0; color: var(--kuning); font-weight: bold;">✓</span>
+                    <strong>Pendekatan Berorientasi Penjualan:</strong> Setiap website yang kami bangun dirancang dengan struktur copywriting dan tombol aksi cepat (seperti Direct WhatsApp) untuk memudahkan proses negosiasi dan konversi pembeli.
+                </li>
+                <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
+                    <span style="position: absolute; left: 0; color: var(--kuning); font-weight: bold;">✓</span>
+                    <strong>Desain Modern & Open Source:</strong> Tampilan antarmuka yang bersih, responsif di berbagai perangkat (Mobile & Desktop), serta menggunakan standar teknologi open source yang andal.
+                </li>
+            </ul>
+
+            <h3 style="color: var(--merah); margin-top: 30px; margin-bottom: 15px; font-size: 1.4rem;">Komitmen Kami</h3>
+            <p style="font-size: 1.1rem; margin-bottom: 30px; line-height: 1.8;">
+                Di Yogi Dev, kepuasan dan kesuksesan mitra adalah prioritas utama. Kami mendengarkan setiap kebutuhan unik Anda, memberikan konsultasi terbuka, dan memastikan hasil akhir website siap pakai tanpa hambatan. Mari wujudkan ekspansi bisnis digital Anda bersama kami hari ini!
+            </p>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="paket.html" class="btn-wa" style="text-decoration: none; display: inline-block; width: auto; padding: 15px 35px; font-size: 1.1rem;">Lihat Pilihan Paket Kami</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Yogi Dev - Solusi Website Cerdas & Profesional.</p>
+    </footer>
+
+    <!-- Script Navigasi & Fitur Find -->
+    <script>
+        function toggleDotMenu() {
+            const menu = document.getElementById("dot-dropdown");
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+
+        function findText() {
+            const input = document.getElementById("findInput").value;
+            if (input.trim() !== "") {
+                const found = window.find(input);
+                if (!found) alert("Kata tidak ditemukan.");
+            }
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dot-btn') && !event.target.closest('.dot-menu-content')) {
+                const dropdowns = document.getElementsByClassName("dot-menu-content");
+                for (let i = 0; i < dropdowns.length; i++) {
+                    dropdowns[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

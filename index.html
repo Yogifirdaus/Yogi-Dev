@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yogi Dev - Jasa Pembuatan Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigasi -->
+    <nav>
+        <div class="logo">
+            <img src="logobaru.png" alt="Logo Yogi Dev" class="logo-img">
+            Yogi <span>Dev</span>
+        </div>
+        
+        <div class="nav-links">
+            <div class="desktop-links">
+                <a href="index.html">Home</a>
+                <a href="paket.html">Paket Harga</a>
+                <a href="tentang.html">Tentang</a>
+                <a href="pembayaran.html">Cara Pembayaran</a>
+
+            </div>
+            
+            <!-- Menu Titik Tiga -->
+            <div class="dropdown-container">
+                <button class="dot-btn" onclick="toggleDotMenu()">&#8942;</button>
+                <div id="dot-dropdown" class="dot-menu-content">
+                    <div class="find-box">
+                        <input type="text" id="findInput" placeholder="Cari kata...">
+                        <button onclick="findText()" class="btn-find">Cari</button>
+                    </div>
+                    <hr>
+                    <a href="index.html">Home</a>
+                    <a href="paket.html">Paket Harga</a>
+                    <a href="pembayaran.html">Cara Pembayaran</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Slideshow Background -->
+    <header id="home" class="hero">
+        <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1920&q=80');"></div>
+        
+        <div class="hero-content">
+            <h1>Wujudkan Ide Bisnis Anda ke Dunia Digital</h1>
+            <p>Yogi Dev menghadirkan website yang cepat, responsif, dan dirancang khusus untuk meningkatkan konversi penjualan Anda.</p>
+            <!-- Tombol diarahkan ke halaman paket.html -->
+            <a href="paket.html" class="btn-wa" style="width: auto; padding: 15px 30px; font-size: 1.1rem; text-decoration: none;">Lihat Paket Website</a>
+        </div>
+    </header>
+
+    <!-- Section Pembayaran -->
+    <section id="pembayaran" class="payment">
+        <h2>Metode Pembayaran Mudah</h2>
+        <div class="ewallet-logos">
+            <div class="ewallet-badge"> <img src="gopay-logo.png" alt="GOPAY" class="ewallet-img"> </div>
+            <div class="ewallet-badge"> <img src="dana-logo.png" alt="DANA" class="ewallet-img"> </div>
+            <div class="ewallet-badge"> <img src="ovo-logo.png" alt="OVO" class="ewallet-img"> </div>
+            <div class="ewallet-badge"> <img src="shoope-logo.png" alt="SHOOPEPAY" class="ewallet-img"> </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Yogi Dev - Solusi Website Cerdas & Profesional.</p>
+    </footer>
+
+    <!-- Script Dasar -->
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 4000);
+
+        function toggleDotMenu() {
+            const menu = document.getElementById("dot-dropdown");
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+
+        function findText() {
+            const input = document.getElementById("findInput").value;
+            if (input.trim() !== "") {
+                const found = window.find(input);
+                if (!found) alert("Kata tidak ditemukan.");
+            }
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dot-btn') && !event.target.closest('.dot-menu-content')) {
+                const dropdowns = document.getElementsByClassName("dot-menu-content");
+                for (let i = 0; i < dropdowns.length; i++) {
+                    dropdowns[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+
+<!-- Tombol Floating Live Chat WhatsApp -->
+<div class="whatsapp-chat-widget">
+    <div id="chat-popup" class="chat-popup">
+        <div class="chat-header">
+            <span>💬 Chat dengan Yogi Dev</span>
+            <span onclick="toggleChatPopup()" style="cursor: pointer; font-size: 18px;">&times;</span>
+        </div>
+        <div class="chat-body">
+            <p>Halo! Ada yang bisa kami bantu seputar jasa pembuatan website?</p>
+        </div>
+        <div class="chat-footer">
+            <!-- Ganti nomor WhatsApp di bawah ini -->
+            <input type="text" id="chat-input" placeholder="Ketik pesan Anda...">
+            <button onclick="sendWhatsAppChat()">Kirim</button>
+        </div>
+    </div>
+
+    <button class="chat-toggle-btn" onclick="toggleChatPopup()">
+        💬 <span class="chat-tooltip">Butuh Bantuan? Chat Kami !</span>
+    </button>
+</div>
+
+<script>
+    // Fungsi untuk membuka/tutup kotak popup chat
+    function toggleChatPopup() {
+        const popup = document.getElementById('chat-popup');
+        popup.style.display = (popup.style.display === 'flex') ? 'none' : 'flex';
+    }
+
+    // Fungsi mengirim pesan langsung ke WhatsApp
+    function sendWhatsAppChat() {
+        const input = document.getElementById('chat-input').value;
+        if (input.trim() === "") {
+            alert("Silakan ketik pesan terlebih dahulu!");
+            return;
+        }
+
+        // Ganti nomor 6281234567890 dengan nomor WhatsApp Anda
+        const noWA = "6283807068538"; 
+        const pesan = "Halo Yogi Dev, boleh saya ngobrol ? " + input;
+        
+        const urlWA = `https://wa.me/${noWA}?text=${encodeURIComponent(pesan)}`;
+        window.open(urlWA, '_blank');
+    }
+</script>
+
+</body>
+</html>

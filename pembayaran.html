@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metode Pembayaran - Yogi Dev</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigasi -->
+    <nav>
+        <div class="logo">
+            <img src="logobaru.png" alt="Logo Yogi Dev" class="logo-img">
+            Yogi <span>Dev</span>
+        </div>
+        
+        <div class="nav-links">
+            <div class="desktop-links">
+                <a href="index.html">Home</a>
+                <a href="paket.html">Paket Harga</a>
+                <a href="pembayaran.html">Cara Pembayaran</a>
+            </div>
+            
+            <!-- Menu Titik Tiga -->
+            <div class="dropdown-container">
+                <button class="dot-btn" onclick="toggleDotMenu()">&#8942;</button>
+                <div id="dot-dropdown" class="dot-menu-content">
+                    <div class="find-box">
+                        <input type="text" id="findInput" placeholder="Cari kata...">
+                        <button onclick="findText()" class="btn-find">Cari</button>
+                    </div>
+                    <hr>
+                    <a href="index.html">Home</a>
+                    <a href="paket.html">Paket Harga</a>
+                    <a href="pembayaran.html">Cara Pembayaran</a>
+                    <a href="tentang.html">Tentang</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Khusus Pembayaran -->
+    <section class="payment" style="min-height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <h2>Metode Pembayaran Mudah</h2>
+        <p style="max-width: 600px; margin-bottom: 30px;">Proses transaksi di Yogi Dev sangat fleksibel dan aman. Kami menerima pembayaran transfer antar bank maupun E-Wallet populer langsung setelah kesepakatan pesanan Anda dikonfirmasi via WhatsApp.</p>
+      
+  
+        <div class="ewallet-logos">
+            <div class="ewallet-badge"> <img src="gopay-logo.png" alt="GOPAY" class="ewallet-img"> </div>
+            <div class="ewallet-badge"> <img src="dana-logo.png" alt="DANA" class="ewallet-img"> </div>
+            <div class="ewallet-badge"> <img src="ovo-logo.png" alt="OVO" class="ewallet-img"> </div>
+            <div class="ewallet-badge"> <img src="shoope-logo.png" alt="SHOOPEPAY" class="ewallet-img"> </div>
+            </div>
+
+        <div style="margin-top: 40px;">
+            <a href="paket.html" class="btn-wa" style="text-decoration: none; padding: 12px 30px;">Pilih Paket & Mulai Pesan</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Yogi Dev - Solusi Website Cerdas & Profesional.</p>
+    </footer>
+
+    <!-- Script Sederhana untuk Navigasi -->
+    <script>
+        function toggleDotMenu() {
+            const menu = document.getElementById("dot-dropdown");
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+
+        function findText() {
+            const input = document.getElementById("findInput").value;
+            if (input.trim() !== "") {
+                const found = window.find(input);
+                if (!found) alert("Kata tidak ditemukan.");
+            }
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dot-btn') && !event.target.closest('.dot-menu-content')) {
+                const dropdowns = document.getElementsByClassName("dot-menu-content");
+                for (let i = 0; i < dropdowns.length; i++) {
+                    dropdowns[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

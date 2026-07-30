@@ -1,0 +1,640 @@
+/* CSS Variables untuk Tema Warna */
+:root {
+    --putih: #ffffff;
+    --merah: #d90429;
+    --kuning: #ffb703;
+    --hitam-teks: #2b2d42;
+    --abu-bg: #f8f9fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: rgba(255, 255, 255, 0.85); /* Angka 0.85 adalah tingkat transparansi (0.0 sampai 1.0) */
+    color: var(--hitam-teks);
+    line-height: 1.6;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(260, 260, 260, 0.100); /* Putih transparan 75% */
+    backdrop-filter: blur(30px); /* Efek blur elegan di belakang navbar */
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 3px solid var(--merah);
+}
+
+/* Pengaturan Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--merah);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--kuning);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.logo-img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--hitam-teks);
+    margin-left: 20px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--merah);
+}
+
+/* Slideshow Hero Section */
+.hero {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: var(--putih);
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: var(--kuning);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+/* Section Global */
+section {
+    padding: 80px 50px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    color: var(--merah);
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+section h2::after {
+    content: '';
+    width: 50%;
+    height: 4px;
+    background-color: var(--kuning);
+    position: absolute;
+    bottom: -10px;
+    left: 25%;
+}
+
+/* Pricing Cards */
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: var(--putih);
+    border: 2px solid #eee;
+    border-radius: 10px;
+    padding: 40px 30px;
+    width: 300px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--kuning);
+}
+
+.card h3 {
+    color: var(--hitam-teks);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--merah);
+    margin-bottom: 20px;
+}
+
+.card ul {
+    list-style: none;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.card ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.card ul li::before {
+    content: '✓';
+    color: var(--kuning);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Tombol WhatsApp */
+.btn-wa {
+    display: inline-block;
+    background-color: var(--merah);
+    color: var(--putih);
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+    width: 100%;
+}
+
+.btn-wa:hover {
+    background-color: var(--kuning);
+    color: var(--merah);
+}
+
+/* E-Wallet Section */
+.payment {
+    background-color: var(--abu-bg);
+    border-top: 3px solid var(--kuning);
+}
+
+.ewallet-logos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.ewallet-badge {
+    background: var(--putih);
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: var(--merah);
+    border: 2px solid var(--merah);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    /* Tambahkan dua baris di bawah ini agar gambar persis di tengah */
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ewallet-img {
+    height: 35px; /* Anda bisa mengubah angka ini untuk membesarkan/mengecilkan logo */
+    width: 35px;
+    object-fit: contain;
+}
+
+/* Footer */
+footer {
+    background-color: var(--merah);
+    color: var(--putih);
+    text-align: center;
+    padding: 20px;
+    border-top: 5px solid var(--kuning);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    section {
+        padding: 50px 20px;
+    }
+}
+
+
+/* =========================================
+   TAMBAHAN CSS UNTUK FITUR TROLI (CART)
+========================================= */
+
+/* Tombol Masukkan ke Troli */
+.btn-cart {
+    background-color: var(--putih);
+    color: var(--merah);
+    border: 2px solid var(--merah);
+    padding: 12px 25px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.btn-cart:hover {
+    background-color: var(--merah);
+    color: var(--putih);
+}
+
+/* Ikon Troli di Navbar */
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+    background-color: var(--kuning);
+    padding: 5px 15px !important;
+    border-radius: 20px;
+    color: var(--hitam-teks) !important;
+}
+
+.cart-icon:hover {
+    background-color: var(--hitam-teks);
+    color: var(--kuning) !important;
+}
+
+.badge {
+    background-color: var(--merah);
+    color: white;
+    border-radius: 50%;
+    padding: 2px 8px;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+/* Jendela Modal (Popup Troli) */
+.modal {
+    display: none; /* Disembunyikan secara default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* Background gelap transparan */
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: var(--putih);
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: var(--merah);
+}
+
+/* Daftar Item di Troli */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed #ccc;
+    font-weight: 600;
+}
+
+.btn-remove {
+    background-color: var(--merah);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 2px 8px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-remove:hover {
+    background-color: darkred;
+}
+
+.cart-total {
+    text-align: right;
+    font-size: 1.2rem;
+    color: var(--hitam-teks);
+}
+
+
+/* =========================================
+   TAMBAHAN CSS UNTUK MENU TITIK TIGA (FIND)
+========================================= */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.desktop-links {
+    display: flex;
+    align-items: center;
+}
+
+/* Container untuk tombol titik 3 */
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tombol Titik Tiga (Kebab Menu) */
+.dot-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: var(--merah);
+    cursor: pointer;
+    padding: 0 10px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.dot-btn:hover {
+    color: var(--kuning);
+}
+
+/* Isi dari Dropdown Titik Tiga */
+.dot-menu-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    background-color: var(--putih);
+    min-width: 250px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    border: 2px solid var(--merah);
+    z-index: 200;
+    overflow: hidden;
+}
+
+/* Link di dalam Menu Dropdown */
+.dot-menu-content a {
+    color: var(--hitam-teks);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: 500;
+    border-bottom: 1px solid #eee;
+    margin: 0;
+    transition: background 0.3s;
+}
+
+.dot-menu-content a:last-child {
+    border-bottom: none;
+}
+
+.dot-menu-content a:hover {
+    background-color: var(--abu-bg);
+    color: var(--merah);
+}
+
+/* Kotak Pencarian (Find) */
+.find-box {
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+    background-color: var(--abu-bg);
+}
+
+.find-box input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+.find-box input:focus {
+    border-color: var(--kuning);
+}
+
+.btn-find {
+    background-color: var(--merah);
+    color: var(--putih);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-find:hover {
+    background-color: var(--kuning);
+    color: var(--hitam-teks);
+}
+
+.dot-menu-content hr {
+    border: 0;
+    height: 3px;
+    background-color: var(--kuning);
+    margin: 0;
+}
+
+/* Agar Menu Utama hilang di HP dan menyisakan Titik Tiga */
+@media (max-width: 768px) {
+    .desktop-links {
+        display: none;
+    }
+}
+
+/* =========================================
+   STYLE UNTUK FLOATING LIVE CHAT WHATSAPP
+========================================= */
+
+.whatsapp-chat-widget {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 999;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Tombol Melayang Utama */
+.chat-toggle-btn {
+    background-color: #25d366; /* Warna khas WhatsApp */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.3s;
+}
+
+.chat-toggle-btn:hover {
+    transform: scale(1.05);
+}
+
+.chat-tooltip {
+    font-size: 14px;
+    background: var(--putih);
+    color: var(--hitam-teks);
+    padding: 4px 8px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Kotak Popup Live Chat */
+.chat-popup {
+    display: none; /* Disembunyikan secara default */
+    flex-direction: column;
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    width: 300px;
+    background-color: var(--putih);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    border: 2px solid var(--merah);
+    overflow: hidden;
+}
+
+.chat-header {
+    background-color: var(--merah);
+    color: var(--putih);
+    padding: 12px 15px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-body {
+    padding: 15px;
+    background-color: var(--abu-bg);
+    font-size: 14px;
+    color: var(--hitam-teks);
+}
+
+.chat-body p {
+    background: var(--putih);
+    padding: 10px;
+    border-radius: 8px;
+    border-left: 4px solid var(--kuning);
+}
+
+.chat-footer {
+    padding: 10px;
+    display: flex;
+    gap: 5px;
+    background-color: var(--putih);
+    border-top: 1px solid #eee;
+}
+
+.chat-footer input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    font-size: 13px;
+}
+
+.chat-footer input:focus {
+    border-color: var(--merah);
+}
+
+.chat-footer button {
+    background-color: var(--merah);
+    color: var(--putih);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.chat-footer button:hover {
+    background-color: var(--kuning);
+    color: var(--hitam-teks);
+}
