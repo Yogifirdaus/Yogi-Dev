@@ -106,5 +106,51 @@
             }
         }
     </script>
+<!-- Tombol Floating Live Chat WhatsApp -->
+    <div class="whatsapp-chat-widget">
+        <div id="chat-popup" class="chat-popup">
+            <div class="chat-header">
+                <span>💬 Chat dengan Yogi Dev</span>
+                <span onclick="toggleChatPopup()" style="cursor: pointer; font-size: 18px;">&times;</span>
+            </div>
+            <div class="chat-body">
+                <p>Halo! Ada yang bisa kami bantu seputar jasa pembuatan website?</p>
+            </div>
+            <div class="chat-footer">
+                <!-- Masukkan nomor WhatsApp Anda di dalam kode JavaScript di bawah -->
+                <input type="text" id="chat-input" placeholder="Ketik pesan Anda...">
+                <button onclick="sendWhatsAppChat()">Kirim</button>
+            </div>
+        </div>
+
+        <button class="chat-toggle-btn" onclick="toggleChatPopup()">
+            💬 <span class="chat-tooltip">Butuh Bantuan? Chat Kami</span>
+        </button>
+    </div>
+
+    <script>
+        function toggleChatPopup() {
+            const popup = document.getElementById('chat-popup');
+            popup.style.display = (popup.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+        function sendWhatsAppChat() {
+            const input = document.getElementById('chat-input').value;
+            if (input.trim() === "") {
+                alert("Silakan ketik pesan terlebih dahulu!");
+                return;
+            }
+
+            // Ganti 6281234567890 dengan nomor WhatsApp asli Anda (awali dengan 62 tanpa angka 0 di depan)
+            const noWA = "6281234567890"; 
+            const pesan = "Halo Yogi Dev, " + input;
+            
+            const urlWA = `https://wa.me/${noWA}?text=${encodeURIComponent(pesan)}`;
+            window.open(urlWA, '_blank');
+        }
+    </script>
+</body>
+</html>
+    
 </body>
 </html>
