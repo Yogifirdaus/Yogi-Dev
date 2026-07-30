@@ -633,6 +633,49 @@ footer {
     cursor: pointer;
     font-weight: bold;
 }
+/* --- PENGATURAN RESPONSIF UNTUK HANDPHONE --- */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Atur ulang padding atau jarak pinggir agar tidak terlalu mepet */
+    body {
+        padding: 10px;
+    }
+
+    /* 2. Menu navigasi agar rapi (sembunyikan menu biasa, tampilkan tombol titik tiga) */
+    .desktop-links {
+        display: none !important;
+    }
+    
+    nav {
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* 3. Sesuaikan ukuran teks utama/judul agar tidak terlalu besar di HP */
+    h1 {
+        font-size: 1.8rem !important;
+    }
+
+    h2 {
+        font-size: 1.5rem !important;
+    }
+
+    /* 4. Jika ada kotak-kotak paket atau konten berdampingan, ubah menjadi bertumpuk ke bawah */
+    .paket-container, .about-card, .card-grid {
+        flex-direction: column !important;
+        width: 100% !important;
+        padding: 20px !important;
+    }
+
+    /* 5. Tombol atau CTA (Call to Action) agar melebar penuh dan mudah diklik jempol */
+    .btn-wa, .btn-find {
+        width: 100% !important;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
 
 .chat-footer button:hover {
     background-color: var(--kuning);
